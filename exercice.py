@@ -5,18 +5,36 @@
 def order(values: list = None) -> bool:
     if values is None:
         # TODO: Demander les valeurs ici
-        pass
+        liste_ordonnee = []
+        while len(liste_ordonnee) < 10:
+            liste_ordonnee.append(int(input("Veuillez entrer un nombre entier: ")))
 
-    return False
+        i = 0
+        while i < (len(liste_ordonnee)-1):
+            if liste_ordonnee[i] > liste_ordonnee[i+1]:
+                print("La liste n'est pas ordonnée")
+                return False
+                break
+            i+=1
+    print("La liste est ordonnée")
+    return True
 
 
 def anagrams(words: list = None) -> bool:
     if words is None:
         # TODO: Demander les mots ici
-        pass
+        mot1 = input("Veuillez entrer un premier mot: ")
+        mot2 = input("Veuillez entrer un deuxième mot: ")
 
-    return False
+        liste_lettres_mot1 = sorted(mot1)
+        liste_lettres_mot2 = sorted(mot2)
 
+        if liste_lettres_mot1 == liste_lettres_mot2: # les mots sont consitués des mêmes lettres
+            print("Les mots sont constitués des mêmes lettres")
+            return True
+        else:
+            print("Les mots ne sont pas consitués des mêmes lettres")
+            return False
 
 def contains_doubles(items: list) -> bool:
     return False
